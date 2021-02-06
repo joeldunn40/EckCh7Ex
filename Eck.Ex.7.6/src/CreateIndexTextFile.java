@@ -73,11 +73,14 @@ public class CreateIndexTextFile {
 	         TextIO.getAnyChar();   // Read the apostrophe.
 	         ch = TextIO.peek();    // Look at char that follows apostrophe.
 	         if (Character.isLetter(ch)) {
-	            word += '\'' + TextIO.getAnyChar();
+	        	 word += '\'';
+	        	 word += TextIO.getAnyChar();
+//	            word += '\'' + TextIO.getAnyChar(); // Need to add sepately otherwise ASCII codes summed
 	            ch = TextIO.peek();  // Look at next char.
 	         }
 	         else
 	            break;
+
 	      }
 	      if ( ! Character.isLetter(ch) ) {
 	            // If the next character is not a letter, the word is
